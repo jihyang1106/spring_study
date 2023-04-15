@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>IntroduceHTML</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+      function axiosInsert() {
+          var form = document.getElementById('form_insert');
+          axios.post(`/axios/postInsert`)
+          .then((res)=>{
+              console.log( res );
+          });
+      }
+    </script>
+</head>
+<body>
+<!--<p th:if="${name} != null" th:text="' 내 이름은 ' + ${name}"></p>-->
+<!--<p th:if="${age} != null" th:text="'내 나이는 ' + ${age}"></p>-->
+
+<form action="/axios/postInsert "method="post" url="/introduce/post" id="form_insert">
+    <fieldset>
+        <div>
+            이름 <input type="text" name="name" />
+        </div>
+        <div>
+            성별
+            <input type="radio" name="male" value="male">
+            <label for="male">남자</label>
+            <input type="radio" name="female" value="female">
+            <label for="female">여자</label>
+        </div>
+        <div>
+            <label for="select birthday">생년월일</label>
+            <select name="year">
+                <option>1995</option>
+                <option>1996</option>
+                <option>1997</option>
+                <option>1998</option>
+            </select>
+            년
+            <select name="month">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+            </select>
+            월
+            <select name="day">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+            </select>
+            일
+        </div>
+        <div>
+            관심사
+            <input type="checkbox" name="trip">
+            <label for="trip">여행</label>
+            <input type="checkbox" name="fashion">
+            <label for="fashion">패션</label>
+            <input type="checkbox" name="food">
+            <label for="food">음식</label>
+        </div>
+    </fieldset>
+    <button type="button" onclick="axiosInsert()">회원가입</button>
+</form>
+</body>
+</html>
