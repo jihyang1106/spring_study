@@ -5,11 +5,12 @@ import java.util.Optional;
 
 import com.example.inflearn_spring.domain.Member;
 import com.example.inflearn_spring.repository.MemberRepository;
+import org.springframework.stereotype.Service;
 
 public class MemberService {
 
 	private final MemberRepository memberRepository;
-	
+
 	// memberRepository를 외부에서 넣어주도록 생성
 	public MemberService(MemberRepository memberRepository) {
 		this.memberRepository = memberRepository;

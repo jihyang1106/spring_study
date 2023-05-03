@@ -7,7 +7,7 @@ import java.util.Map;
 import java.util.Optional;
 
 import com.example.inflearn_spring.domain.Member;
-
+import org.springframework.stereotype.Repository;
 public class MemoryMemberRepository implements MemberRepository {
 
 	private static Map<Long, Member> store = new HashMap<>();
